@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- Enlace con los archivos de BS -->
+  <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <title>Tablas compuestas</title>
+</head>
+<body>
+  <!-- Parte del nav-bar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">App Ing ECO</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="simple.html">Simple</a></li>
+        <li><a href="tablas-comp.html">Compuesto</a></li>
+        <li><a href="#">Acerca de</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- FIN Parte del nav-bar -->
+
+  <!-- Parte de la introduccion de datos para hacer el calculo -->
+  <div class="form-group">
+    <label for="">Tipo de:</label>
+    <select class="form-control" name="" id="tipo">
+      <option value="1">F/P</option>
+      <option value="2">P/F</option>
+      <option value="3">A/P</option>
+      <option value="4">P/A</option>
+      <option value="5">A/F</option>
+      <option value="6">F/A</option>
+      <option value="7">A/G</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="">n:</label>
+    <input type="text" name="num" class="form-control" id="numero">
+  </div>
+  <div class="form-group">
+    <label for="">i:</label>
+    <input type="text" name="i" class="form-control" id="interes">
+  </div>
+  <div class="form-class">
+    <button type="button" name="button" class="btn btn-lg btn-info" id="btnCalcular">Enviar</button>
+  </div>
+  <!-- FIN Parte de la introduccion de datos para hacer el calculo -->
+
+
+  <!-- JS y JQuery para que funcione el BS -->
+  <script src="js/bootstrap.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js" charset="utf-8"></script>
+  <script src="js/mi-js.js" charset="utf-8"></script>
+</body>
+</html>
