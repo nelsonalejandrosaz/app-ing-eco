@@ -5,12 +5,27 @@
   var tipo=0;
   var resultado=0.0;
   var boton = document.getElementById("btnCalcular");
+  // var divEr = document.createElement("div");
+  // var strongEl = document.createElement("strong");
+  // var mensaje = "";
 
 
   function obtenerDatos(){
     n = parseInt(document.getElementById("numero").value);
     i = parseFloat(document.getElementById("interes").value);
+    i = i/100;
     tipo = parseInt(document.getElementById("tipo").value);
+
+    while (n < 0) {
+      // x = document.getElementById("numero");
+      // x.setAttribute("placeholder","Ingrese un numero mayor a 0");
+      // alert("Si llega aqui");
+      mensaje = "Ingrese un numero mayor a 0";
+      contenido = document.createTextNode(mensaje);
+      divEr = document.getElementById('div-error');
+      divEr.appendChild(contenido);
+      divEr.classList.remove('hidden');
+    }
   }
 
   function fp(){
@@ -44,7 +59,7 @@
   }
 
   function ag(){
-    var res = 0;
+    var res = [(1/i)-(n/[(Math.pow((1 + i),n)) - 1])];
     return res;
   }
 
@@ -73,9 +88,12 @@
         resultado = ag();
         break;
     }
-    alert(resultado.toFixed(5));
+    alert(resultado);
   }
 
+  // Eventos
+
   boton.addEventListener("click",calcular);
+
 
 //}())
