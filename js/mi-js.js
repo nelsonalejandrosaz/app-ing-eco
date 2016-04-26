@@ -1,10 +1,9 @@
 //(function(){
   // Variables
-  var n=0.0;
-  var i=0.0;
-  var tipo=0;
-  var resultado=0.0;
-  var boton = document.getElementById("btnCalcular");
+  var n=0.0, i=0.0, tipo=0, resultado=0.0, cont=0, contEr=0;
+  var boton = document.getElementById("btnCalcular"),
+      entradai = document.getElementById("interes"),
+      entradan = document.getElementById("numero");
   // var divEr = document.createElement("div");
   // var strongEl = document.createElement("strong");
   // var mensaje = "";
@@ -16,15 +15,11 @@
     i = i/100;
     tipo = parseInt(document.getElementById("tipo").value);
 
-    while (n < 0) {
-      // x = document.getElementById("numero");
-      // x.setAttribute("placeholder","Ingrese un numero mayor a 0");
-      // alert("Si llega aqui");
-      mensaje = "Ingrese un numero mayor a 0";
-      contenido = document.createTextNode(mensaje);
-      divEr = document.getElementById('div-error');
-      divEr.appendChild(contenido);
-      divEr.classList.remove('hidden');
+    if (n <= 0) {
+      tipo = 8;
+    }
+    if (i <= 0) {
+      tipo = 9;
     }
   }
 
@@ -87,13 +82,55 @@
       case 7:
         resultado = ag();
         break;
+      case 8:
+        if (contEr > 0) {
+          divEr.removeChild(contenido);
+        }else if (contEr == 0) {
+          divEr = document.getElementById('div-error');
+        }
+        mensaje = "Ingrese un n mayor a 0";
+        contenido = document.createTextNode(mensaje);
+        divEr.appendChild(contenido);
+        divEr.classList.remove('hidden');
+        resultado = 0;
+        contEr++;
+        break;
+      case 9:
+        if (contEr > 0) {
+          divEr.removeChild(contenido);
+        }else if (contEr == 0) {
+          divEr = document.getElementById('div-error');
+        }
+        mensaje = "Ingrese un interes mayor a 0";
+        contenido = document.createTextNode(mensaje);
+        divEr.appendChild(contenido);
+        divEr.classList.remove('hidden');
+        resultado = 0;
+        contEr++;
+        break;
     }
-    alert(resultado);
+    if (cont > 0) {
+      divRes.removeChild(contenidoRes);
+    }else if (cont == 0) {
+      divRes = document.getElementById('div-respuesta');
+    }
+    cont++;
+    contenidoRes = document.createTextNode(resultado.toFixed(5));
+    divRes.appendChild(contenidoRes);
+    divRes.classList.remove('hidden')
+  }
+
+  function removerMenErr(){
+    if (contEr > 0) {
+      divEr.classList.add('hidden');
+    }
   }
 
   // Eventos
 
   boton.addEventListener("click",calcular);
+  entradai.addEventListener("click",removerMenErr);
+  entradan.addEventListener("click",removerMenErr);
 
 
 //}())

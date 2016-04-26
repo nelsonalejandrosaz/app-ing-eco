@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!-- Enlace con los archivos de BS -->
   <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <!-- <link rel="stylesheet" href="css/mi-css.css" media="screen" title="no title" charset="utf-8"> -->
   <title>Tablas compuestas</title>
 </head>
 <body>
@@ -17,13 +18,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> App Ing ECO</a>
+        <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span> App Ing ECO</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="#"><span class="glyphicon glyphicon-export"></span> Simple</a></li>
-          <li class="active"><a href="#"><span class="glyphicon glyphicon-list"></span> Tablas Factores</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-stats"></span> Compuesto</a></li>
+          <li><a href="simple.html"><span class="glyphicon glyphicon-export"></span> Simple</a></li>
+          <li class="active"><a href="tablas-comp.html"><span class="glyphicon glyphicon-list"></span> Tablas Factores</a></li>
+          <li><a href="compuesto.html"><span class="glyphicon glyphicon-stats"></span> Compuesto</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -38,8 +39,8 @@
   <div class="container">
 
     <!-- Aqui va el div donde van los error y la respuesta -->
-    <div class="alert alert-success " id="div-respuesta">
-      <strong>Success!</strong> Exito
+    <div class="alert alert-success hidden h3" id="div-respuesta">
+
     </div>
     <div class="alert alert-danger hidden" id="div-error">
       <strong>Error!</strong>
@@ -49,7 +50,7 @@
     <div class="jumbotron">
       <div class="form-group">
         <label for="">Tipo de:</label>
-        <select class="form-control" name="" id="tipo">
+        <select class="form-control" name="Hola" id="tipo">
           <option value="1">F/P</option>
           <option value="2">P/F</option>
           <option value="3">A/P</option>
@@ -69,9 +70,8 @@
       </div>
       <div class="form-group">
         <div class="form-class">
-          <button type="button" name="button" class="btn btn-lg btn-info" id="btnCalcular">Enviar</button>
+          <button type="button" name="button" class="btn btn-lg btn-default center-block " id="btnCalcular">Enviar</button>
         </div>
-        <label>Resultado</label>
       </div>
 
     </div>
